@@ -4,8 +4,19 @@ let output = document.getElementById("output-area")
 
 translate.addEventListener("click", translation)
 
+var serverUrl = "https://api.funtranslations.com/translate/ferb-latin.json"
+
+
+function getUrl(text) {
+    serverUrl + "?" + "text=" + text
+}
+
 
 function translation() {
+
     let userInputValue = userInput.value
-    console.log(userInputValue)
+
+    fetch(getUrl(userInputValue))
+        .then(fetch)
 }
+
